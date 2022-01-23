@@ -1,0 +1,10 @@
+Get-ExecutionPolicy
+Set-ExecutionPolicy Unrestricted
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+New-Item Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+choco upgrade chocolatey --force
+refreshenv
+choco feature enable -n allowGlobalConfirmation
+choco install 7zip --pre 
+choco install bluej chocolateygui discord etcher everything freedownloadmanager git google-drive-file-stream notepadplusplus obs-studio office-tool openjdk powershell-core powertoys protonvpn python qbittorrent-enhanced quicklook rufus sharex shutup10 spotify vlc vscode whatsapp
+choco install freetube --pre
